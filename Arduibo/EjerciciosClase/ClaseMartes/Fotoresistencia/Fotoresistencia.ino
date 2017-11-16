@@ -15,16 +15,18 @@
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
-  pinMode(11,OUTPUT);
+  pinMode(15,OUTPUT);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
   //brillo = analogRead(A0)/4; 
   //analogWrite(11, brillo);
-   int brillo=analogRead(A0);
-   brillo=map(brillo,0,1023,255,0)
+   int brillo=analogRead(A3);
+   brillo=map(analogRead(brillo),1023,0,0,255);
+  // brillo=map(brillo,0,1023,0,255);
+   analogWrite(15,brillo);
   // print out the value you read:
   Serial.println(brillo);
-  delay(1);        // delay in between reads for stability
+ // delay(1);        // delay in between reads for stability
 }

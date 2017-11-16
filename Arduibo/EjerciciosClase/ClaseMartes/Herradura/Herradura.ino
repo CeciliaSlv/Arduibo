@@ -9,7 +9,6 @@
 
   http://www.arduino.cc/en/Tutorial/AnalogReadSerial
 */
-
 // the setup routine runs once when you press reset:
 void setup() {
   // initialize serial communication at 9600 bits per second:
@@ -20,9 +19,9 @@ void setup() {
 void loop() {
   // read the input on analog pin 0:
   //Registra 1, si no hay nada y 0 si algo lo obstruye
-  int sensorValue = digitalRead(2);
+  int sensorValue = analogRead(A2);
   //Registra numeros grandes si no hay nada;pequeño si algo lo obstruye
-  //int sensorValue = analogRead(A0);
+  //int sensorValue = analogRead(A2);
   // print out the value you read:
   Serial.println(sensorValue);
   delay(1);        // delay in between reads for stability
